@@ -1,0 +1,79 @@
+﻿@model IEnumerable<coreModel.Model.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Add Employee</h1>
+<br />
+<br />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-danger">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.employeeNameSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.employeeGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.employeeDOS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.employeeShift)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.employeeWage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.employeeBounty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dutyID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.titleID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeNameSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeDOS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeShift)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeWage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeBounty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dutyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.titleID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.employeeID">Edit</a> |
+                
+                <a asp-action="Delete" asp-route-id="@item.employeeID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

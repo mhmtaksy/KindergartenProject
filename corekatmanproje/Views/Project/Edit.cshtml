@@ -1,0 +1,51 @@
+﻿@model corekatmanproje.Models.Project
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+}
+
+<h1>Edit Projects</h1>
+<br />
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="projectID" />
+            <div class="form-group">
+                <label asp-for="projectName" class="control-label"></label>
+                <input asp-for="projectName" class="form-control" />
+                <span asp-validation-for="projectName" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="projectDOS" class="control-label"></label>
+                <input asp-for="projectDOS" class="form-control" />
+                <span asp-validation-for="projectDOS" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="projectDOE" class="control-label"></label>
+                <input asp-for="projectDOE" class="form-control" />
+                <span asp-validation-for="projectDOE" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="dutyID" class="control-label"></label>
+                <input asp-for="dutyID" class="form-control" />
+                <span asp-validation-for="dutyID" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-info" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

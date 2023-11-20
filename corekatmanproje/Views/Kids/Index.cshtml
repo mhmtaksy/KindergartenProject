@@ -1,0 +1,55 @@
+﻿@model IEnumerable<coreModel.Model.Kids>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Kid List</h1>
+<br />
+<br />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-danger">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.kidNameSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kidGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kidBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.employeeID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.kidNameSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kidGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kidBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.kidID">Edit</a> |
+                
+                <a asp-action="Delete" asp-route-id="@item.kidID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

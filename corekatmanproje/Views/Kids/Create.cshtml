@@ -1,0 +1,51 @@
+﻿@model coreModel.Model.Kids
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+
+<h1>Add Kid</h1>
+<br />
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="kidNameSurname" class="control-label"></label>
+                <input asp-for="kidNameSurname" class="form-control" />
+                <span asp-validation-for="kidNameSurname" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="kidGender" class="control-label"></label>
+                <input asp-for="kidGender" class="form-control" />
+                <span asp-validation-for="kidGender" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="kidBirth" class="control-label"></label>
+                <input asp-for="kidBirth" class="form-control" />
+                <span asp-validation-for="kidBirth" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="employeeID" class="control-label"></label>
+                <input asp-for="employeeID" class="form-control" />
+                <span asp-validation-for="employeeID" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-info" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

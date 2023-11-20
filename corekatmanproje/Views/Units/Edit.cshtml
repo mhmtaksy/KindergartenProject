@@ -1,0 +1,39 @@
+﻿@model corekatmanproje.Models.Units
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+}
+
+<h1>Edit Unit</h1>
+<br />
+<br />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="unitsID" />
+            <div class="form-group">
+                <label asp-for="unitsName" class="control-label"></label>
+                <input asp-for="unitsName" class="form-control" />
+                <span asp-validation-for="unitsName" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="unitsNOE" class="control-label"></label>
+                <input asp-for="unitsNOE" class="form-control" />
+                <span asp-validation-for="unitsNOE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-info" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

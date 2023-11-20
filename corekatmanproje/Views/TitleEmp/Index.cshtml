@@ -1,0 +1,84 @@
+﻿@model IEnumerable<coreModel.Model.TitleEmp>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <table class="table table-danger text-md-center">
+                <thead>
+
+
+                    <tr>
+
+
+                        <th>
+                            Title ID
+                        </th>
+                        <th>
+                            Title Name
+                        </th>
+                        <th>
+                            Employee ID
+                        </th>
+                        <th>
+                            Employee Name&Surname
+                        </th>                        
+                        <th>
+                            Employee Shift
+                        </th>                       
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @item.titleID
+                            </td>
+
+                            <td>
+                                @item.titleName
+                            </td>
+                            <td>
+                                @item.employeeID
+                            </td>
+                            <td>
+                                @item.employeeNameSurname
+                            </td>
+                            <td>
+                                @if (item.employeeShift == true)
+                                {
+                                    <span>Night</span>
+                                }
+
+                                else
+                                {
+                                     <span>Morning</span>    
+                                }
+
+                            </td>                           
+                        </tr>
+
+
+
+                    }
+
+
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

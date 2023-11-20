@@ -1,0 +1,49 @@
+﻿@model IEnumerable<coreModel.Model.Duty>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Duty List</h1>
+<br />
+<br />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-danger">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dutyDefinition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dutyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dutyPoint)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dutyDefinition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dutyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dutyPoint)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.dutyID">Edit</a> |
+                
+                <a asp-action="Delete" asp-route-id="@item.dutyID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

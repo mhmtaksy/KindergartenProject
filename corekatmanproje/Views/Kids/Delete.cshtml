@@ -1,0 +1,47 @@
+﻿@model coreModel.Model.Kids
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_Layout";
+}
+
+<h1>Delete Kids</h1>
+<br />
+<br />
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Kids</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.kidNameSurname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.kidNameSurname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.kidGender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.kidGender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.kidBirth)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.kidBirth)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.employee)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.employee.employeeNameSurname)
+        </dd class>
+    </dl>
+    <br />
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="kidID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
